@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot UI</title>
+</head>
+<body>
+    <h2>Chat</h2>
+    <form id="chat-form">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="text" id="message" placeholder="Type a message" required>
+        <button type="submit">Send</button>
+    </form>
+    <div id="chat-box"></div>
+    <script>
+        const form = document.getElementById('chat-form');
+        const chatBox = document.getElementById('chat-box');
+        form.onsubmit = async (e) => {
+            e.preventDefault();
+            const user = document.getElementById('username').value;
+            const message = document.getElementById('message').value;
+            const res = await fetch('/send', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({user, message})
+            });
+            const data = await res.json();
+            chatBox.innerHTML += `<div><b>User:</b> ${message}</div>`;
+            chatBox.innerHTML += `<div><b>AI:</b> ${data.response}</div>`;
+            chatBox.innerHTML += `\n\n---------------------------------------\n\n`;
+            document.getElementById('message').value = '';
+        };
+    </script>
+</body>
+</html>
