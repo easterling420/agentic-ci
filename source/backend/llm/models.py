@@ -3,7 +3,7 @@ from langchain_openai import ChatOpenAI, AzureChatOpenAI
 from langchain_anthropic import ChatAnthropic
 
 os.environ["OPENAI_API_KEY"] = ""
-os.environ["AZURE_OPENAI_API_KEY"] = ""
+os.environ["AZURE_OPENAI_API_KEY"] = "55709b8a79894e24ae43625e266b4181"
 
 openai = ChatOpenAI(
     model="gpt-4o",
@@ -13,7 +13,7 @@ openai = ChatOpenAI(
 )
 
 azure_openai = AzureChatOpenAI(
-    azure_endpoint="https://mist-prod.openai.azure.com/",
+    azure_endpoint="",
     api_version="2024-12-01-preview",
     azure_deployment="stage1-gpt4o",
     max_retries=2,
