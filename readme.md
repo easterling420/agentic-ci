@@ -35,8 +35,8 @@ pip install -r requirements.txt
 ### 2. Run the Web UI
 Set Env variable for LLM (Directory: `source/backend/llm/models.py`)
 ```
-os.environ["OPENAI_API_KEY"] = ""
-os.environ["AZURE_OPENAI_API_KEY"] = ""
+os.environ["OPENAI_API_KEY"] = "<your_key>"
+os.environ["AZURE_OPENAI_API_KEY"] = "<your_key>"
 ```
 based on your deployments specifications
 
