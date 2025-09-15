@@ -2,13 +2,6 @@
 
 A simple agentic chatbot 
 
-## Features
-
-- **Web UI**: Chat with the bot via a simple web interface (`/source/ui/app.py`).
-- **CLI**: Interact with the chatbot from the command line (`/source/backend/cli_chat.py`).
-- **LangGraph Integration**: Modular backend for intent routing and message processing.
-- **Extensible Agents**: Easily add new agents, tools, and intent configurations.
-
 ## Project Structure
 
 ```
@@ -41,12 +34,14 @@ pip install -r requirements.txt
 
 ### 2. Run the Web UI
 Set Env variable for LLM (Directory: `source/backend/llm/models.py`)
-```os.environ["OPENAI_API_KEY"] = ""
+```
+os.environ["OPENAI_API_KEY"] = ""
 os.environ["AZURE_OPENAI_API_KEY"] = ""
 ```
 based on your deployments specifications
 
-```chmod +x ./source/run.sh
+```
+chmod +x ./source/run.sh
 ./source/run.sh
 ```
 
